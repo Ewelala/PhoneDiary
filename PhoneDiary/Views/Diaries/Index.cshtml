@@ -1,0 +1,54 @@
+﻿@model IEnumerable<PhoneDiary.Models.Diary>
+
+@{
+    ViewBag.Title = "Książka";
+    ConfirmationDTO confirmationDTO = new ConfirmationDTO { Id = "confirmationDiary", Function = "deleteDiary" };
+}
+
+@Html.Partial("_ConfirmDelete", confirmationDTO)
+
+<h2 class="center greenText">@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Dodaj", "Create", "", new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address.Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Person.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person.Name)
+            </td>
+            <td id="commandColumn">
+                @Html.ActionLink("Edytuj", "Edit", new { id = item.ID }, new { @class = "btn btn-primary" })
+                <button class="btn btn-danger" onclick="showPopup(@item.ID, '#confirmationDiary')">Usuń</button>
+            </td>
+        </tr>
+    }
+
+</table>
