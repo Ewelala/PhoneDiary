@@ -5,11 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="432c49264bb34d12986f74e70ba488d2" Name="Diagram1">
-        <EntityTypeShape EntityType="PhoneDiaryModel.Address" Width="1.5" PointX="0.75" PointY="5.125" />
         <EntityTypeShape EntityType="PhoneDiaryModel.Person" Width="1.5" PointX="0.75" PointY="1.25" />
         <EntityTypeShape EntityType="PhoneDiaryModel.Diary" Width="1.5" PointX="3" PointY="3" />
-        <AssociationConnector Association="PhoneDiaryModel.FK_Diary_Address" />
         <AssociationConnector Association="PhoneDiaryModel.FK_Diary_Person" />
+        <EntityTypeShape EntityType="PhoneDiaryModel.Address" Width="1.5" PointX="5.125" PointY="1.875" />
+        <AssociationConnector Association="PhoneDiaryModel.FK_Diary_Address" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

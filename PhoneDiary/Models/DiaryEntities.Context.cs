@@ -25,8 +25,8 @@ namespace PhoneDiary.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<Person> People { get; set; }
         public virtual DbSet<Diary> Diaries { get; set; }
+        public virtual DbSet<Address> Addresses { get; set; }
     }
 }

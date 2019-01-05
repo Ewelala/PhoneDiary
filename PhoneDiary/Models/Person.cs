@@ -11,8 +11,7 @@ namespace PhoneDiary.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Person
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,18 +21,9 @@ namespace PhoneDiary.Models
         }
     
         public int ID { get; set; }
-        [Display(Name = "Imiê")]
         public string Name { get; set; }
-        [Display(Name = "Nazwisko")]
         public string LastName { get; set; }
-        public string FullName
-        {
-            get
-            {
-                return $"{Name} {LastName}";
-            }
-        }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Diary> Diaries { get; set; }
     }

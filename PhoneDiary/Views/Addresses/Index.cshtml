@@ -40,7 +40,7 @@
             </td>
             <td id="commandColumn">
                 @Html.ActionLink("Edytuj", "Edit", new { id = item.ID }, new { @class = "btn btn-primary" })
-                @*@Html.ActionLink("Szczegóły", "Details", new { id=item.ID }, new { @class = "btn btn-info" })*@
+                @Html.ActionLink("Szczegóły", "Details", new { id=item.ID }, new { @class = "btn btn-info" })
                 @*@Html.ActionLink("Usuń", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })*@
                 <button class="btn btn-danger" onclick="showPopup(@item.ID, '#confirmationAddress')">Usuń</button>
             </td>
