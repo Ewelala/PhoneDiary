@@ -15,7 +15,7 @@ namespace PhoneDiary.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Super Aplikacja";
 
             return View();
         }

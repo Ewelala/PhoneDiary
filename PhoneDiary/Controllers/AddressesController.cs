@@ -17,7 +17,13 @@ namespace PhoneDiary.Controllers
         // GET: Addresses
         public ActionResult Index()
         {
-            return View(db.Addresses.ToList());
+            var model = new List<Address>();
+            try
+            {
+                model = db.Addresses.ToList();
+            }
+            catch   {   }
+            return View(model);
         }
 
         // GET: Addresses/Details/5
