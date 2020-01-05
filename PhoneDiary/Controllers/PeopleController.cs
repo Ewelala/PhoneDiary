@@ -10,17 +10,27 @@ using PhoneDiary.Models;
 
 namespace PhoneDiary.Controllers
 {
+    /// <summary>
+    /// kontroller obsługujacy zapis, odczyt i edycję dotyczącą ludzi wpisanych do książki.
+    /// </summary>
     public class PeopleController : Controller
     {
         private PhoneDiaryEntities db = new PhoneDiaryEntities();
 
-        // GET: People
+        /// <summary>
+        /// Zwraca widok z listą aktualnie zapisanych ludzi.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             return View(db.People.ToList());
         }
 
-        // GET: People/Details/5
+        /// <summary>
+        /// Zwraca szczegoły dla danego człowieka na podstawie przekazanego Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,15 +45,20 @@ namespace PhoneDiary.Controllers
             return View(person);
         }
 
-        // GET: People/Create
+       /// <summary>
+       /// Otwiera widok który umożliwia utworzenie nowego wpisu z danymi kontaktowymi.
+       /// </summary>
+       /// <returns></returns>
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: People/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Tworzy nowy wpis w bazie danych na podstawie danych z formularza.
+        /// </summary>
+        /// <param name="person"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,LastName")] Person person)
@@ -58,7 +73,11 @@ namespace PhoneDiary.Controllers
             return View(person);
         }
 
-        // GET: People/Edit/5
+        /// <summary>
+        /// Otwiera widok umożliwiający edycję kontaktu
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,9 +92,11 @@ namespace PhoneDiary.Controllers
             return View(person);
         }
 
-        // POST: People/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+       /// <summary>
+       /// Zapisuje do bazy kontakt po edycji, przekazujemy obiekt person z formularza.
+       /// </summary>
+       /// <param name="person"></param>
+       /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name,LastName")] Person person)
@@ -88,7 +109,11 @@ namespace PhoneDiary.Controllers
             }
             return View(person);
         }
-
+        /// <summary>
+        /// Usuwa z bazy wpis na podstawie Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Delete(int id)
         {
@@ -104,7 +129,10 @@ namespace PhoneDiary.Controllers
                 return Content(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Przekazuje obiekt do usunięcia z pamięci
+        /// </summary>
+        /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)

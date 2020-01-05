@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PhoneDiary</name>
+    </assembly>
+    <members>
+        <member name="T:PhoneDiary.Controllers.PeopleController">
+            <summary>
+            kontroller obsługujacy zapis, odczyt i edycję dotyczącą ludzi wpisanych do książki.
+            </summary>
+        </member>
+        <member name="M:PhoneDiary.Controllers.PeopleController.Index">
+            <summary>
+            Zwraca widok z listą aktualnie zapisanych ludzi.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PhoneDiary.Controllers.PeopleController.Details(System.Nullable{System.Int32})">
+            <summary>
+            Zwraca szczegoły dla danego człowieka na podstawie przekazanego Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PhoneDiary.Controllers.PeopleController.Create">
+            <summary>
+            Otwiera widok który umożliwia utworzenie nowego wpisu z danymi kontaktowymi.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PhoneDiary.Controllers.PeopleController.Create(PhoneDiary.Models.Person)">
+            <summary>
+            Tworzy nowy wpis w bazie danych na podstawie danych z formularza.
+            </summary>
+            <param name="person"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PhoneDiary.Controllers.PeopleController.Edit(System.Nullable{System.Int32})">
+            <summary>
+            Otwiera widok umożliwiający edycję kontaktu
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PhoneDiary.Controllers.PeopleController.Edit(PhoneDiary.Models.Person)">
+            <summary>
+            Zapisuje do bazy kontakt po edycji, przekazujemy obiekt person z formularza.
+            </summary>
+            <param name="person"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PhoneDiary.Controllers.PeopleController.Delete(System.Int32)">
+            <summary>
+            Usuwa z bazy wpis na podstawie Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PhoneDiary.Controllers.PeopleController.Dispose(System.Boolean)">
+            <summary>
+            Przekazuje obiekt do usunięcia z pamięci
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:PhoneDiary.Models.DTO.ConfirmationDTO">
+            <summary>
+            Klasa pomocnicza dla usuwania rekordów z bazy danych. Posiada tylko dwie potrzebne właściwości.
+            </summary>
+        </member>
+        <member name="P:PhoneDiary.Models.DTO.ConfirmationDTO.Function">
+            <summary>
+            Nazwa funkcji którą należy wykonać po stronie JavaScript, w celu usunięcia rekordu.
+            </summary>
+        </member>
+        <member name="P:PhoneDiary.Models.DTO.ConfirmationDTO.Id">
+            <summary>
+            Id rekordu do usunięcia z bazy danych.
+            </summary>
+        </member>
+        <member name="T:PhoneDiary.Models.Person">
+            <summary>
+            Klasa częściowa dla Modelu Person. Pomocnicza która nie generuje się automatycznie.
+            </summary>
+        </member>
+        <member name="P:PhoneDiary.Models.Person.FullName">
+            <summary>
+            Zwraca pełne imię i nazwisko potrzebne w widokach.
+            </summary>
+        </member>
+    </members>
+</doc>
